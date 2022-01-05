@@ -3,7 +3,7 @@
 use ink_lang as ink;
 
 #[ink::contract]
-mod Department {
+mod department {
 
     /// Defines the storage of your contract.
     /// Add new fields to the below struct in order
@@ -58,17 +58,17 @@ mod Department {
         /// We test if the default constructor does its job.
         #[ink::test]
         fn default_works() {
-            let Department = Department::default();
-            assert_eq!(Department.get(), false);
+            let department = Department::default();
+            assert_eq!(department.get(), false);
         }
 
         /// We test a simple use case of our contract.
         #[ink::test]
         fn it_works() {
-            let mut Department = Department::new(false);
-            assert_eq!(Department.get(), false);
-            Department.flip();
-            assert_eq!(Department.get(), true);
+            let mut department = Department::new(false);
+            assert_eq!(department.get(), false);
+            department.flip();
+            assert_eq!(department.get(), true);
         }
     }
 }
